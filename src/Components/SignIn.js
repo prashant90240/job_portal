@@ -26,9 +26,10 @@ function SignIn(props) {
             rdata.jobid=== loggeduser.jobid &&
             rdata.password===loggeduser.password)
             {
+              localStorage.setItem("loggedin",true)
                 navigate("/home");
         }else{
-            alert("Wrong Email Or Password")
+            alert("Wrong JobID Or Password")
         }
 
     };
@@ -39,6 +40,7 @@ function SignIn(props) {
             cdata.email=== loggeduser1.email &&
             cdata.password===loggeduser1.password)
             {
+              localStorage.setItem("loggedin",true)
                 navigate("/home");
         }else{
             alert("Wrong Email Or Password")

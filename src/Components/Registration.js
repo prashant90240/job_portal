@@ -24,12 +24,22 @@ function Registration(props) {
     const handleSubmit=(e)=>{
         e.preventDefault();
         localStorage.setItem("user",JSON.stringify(rdata));
-        navigate("/SignIn")
+        if(rdata.jobid && rdata.email && rdata.password){
+
+          navigate("/SignIn")
+        }else{
+          alert('please fill the required ceredentials!!')
+        }
     };
     const handleSubmit1=(e)=>{
         e.preventDefault();
         localStorage.setItem("user1",JSON.stringify(cdata));
-        navigate("/SignIn")
+        if(cdata.name && cdata.email && cdata.password){
+
+          navigate("/SignIn")
+        }else{
+          alert('please fill the required ceredentials!!')
+        }
     };
 
 
@@ -46,7 +56,7 @@ function Registration(props) {
             <div className="Auth-form-content">
               <h3 className="Auth-form-title">Create Account</h3>
               <div className="text-center">
-                Registered As Recruiter ?{" "}
+                Registered As JobSeeker ?{" "}
                 <span className="link-primary" onClick={changeAuthMode}>
                   <u>Sign Up</u>
                 </span>
@@ -120,7 +130,7 @@ function Registration(props) {
           <div className="Auth-form-content">
             <h3 className="Auth-form-title">Create Account</h3>
             <div className="text-center">
-              Registerd As JobSeeker ?{" "}
+              Registerd As Admin ?{" "}
               <span className="link-primary" onClick={changeAuthMode}>
               <u>Sign UP</u>
               </span>
